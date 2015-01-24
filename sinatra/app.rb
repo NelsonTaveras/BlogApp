@@ -1,10 +1,14 @@
 require 'sinatra'
 require_relative '../lib/blog.rb'
 
+def app
+  Sinatra::Application
+end
+
 blog = Blog.new
 
 get '/' do
-  erb :index
+  "Index Page"
 end
 
 get '/posts/:id' do

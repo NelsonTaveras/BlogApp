@@ -5,17 +5,23 @@
   <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-  <% @posts.each do |post| %>
-    <div class="post">
-        <h1> <%= post['title'] %> </h1>
-        <p>
-          <%= post['description'] %> 
-        </p>
-    </div>
-        <div class="footer">
-          <b>Author:</b> <%= post['author'] %> <br />
-          <b>Tags:</b> <%= post['tags'] %> <br />
+  <% if @posts.count > 0 %>
+    <% @posts.each do |post| %>
+      <div class="post">
+          <h1> <%= post['title'] %> </h1>
+          <p>
+            <%= post['description'] %> 
+          </p>
       </div>
+          <div class="footer">
+            <b>Author:</b> <%= post['author'] %> <br />
+            <b>Tags:</b> <%= post['tags'] %> <br />
+        </div>
+    <% end %>
+  <% else %>
+    <div class="post">
+          <h1> Nothing to see here... </h1>
+    </div>
   <% end %>
 </body>
 </html>
