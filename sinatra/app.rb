@@ -18,3 +18,9 @@ get '/author/:author' do
   @posts = blog.find_by_author(author)
   erb :index
 end
+
+get '/tags/:tag' do
+  tag = params[:tag].to_str
+  @posts = blog.find_by_tag(tag)
+  erb :index
+end
