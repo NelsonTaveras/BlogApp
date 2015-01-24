@@ -1,8 +1,21 @@
-<% @posts.each do |post| %>
-  <p>
-    <b>Author:</b> <%= post['author'] %> <br />
-    <b>Title:</b> <%= post['title'] %> <br />
-    <b>Tags:</b> <%= post['tags'] %> <br />
-    <b>Description:</b> <%= post['description'] %> <br />
-  </p>
-<% end %>
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Post Results</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <% @posts.each do |post| %>
+    <div class="post">
+        <h1> <%= post['title'] %> </h1>
+        <p>
+          <%= post['description'] %> 
+        </p>
+    </div>
+        <div class="footer">
+          <b>Author:</b> <%= post['author'] %> <br />
+          <b>Tags:</b> <%= post['tags'] %> <br />
+      </div>
+  <% end %>
+</body>
+</html>
