@@ -43,6 +43,14 @@ describe Blog do
     end
   end
 
+  describe "#tag_cloud" do
+    it "Returns all the tags of posts list along with their frequency" do
+      @tags = @blog.tag_cloud
+      expect @tags["cooking"].should == 1
+      expect @tags["fitness"].should == 2
+    end
+  end
+
   describe "#summary" do
     it "Displays the first n words of the post with the specified id" do
       expect { @blog.summary(1, 10) }.to output("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare").to_stdout
