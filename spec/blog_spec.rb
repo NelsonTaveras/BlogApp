@@ -27,4 +27,11 @@ describe Blog do
     end
   end
 
+  describe "#find_by_author" do
+    it "Should return all the posts that match the specified author" do
+      @posts = @blog.find_by_author("Pixelated")
+      expect @posts.count.should == 2
+    end
+  end
+
 end

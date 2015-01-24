@@ -13,4 +13,8 @@ class Blog
     @posts.select { |post| post['id'].to_i == id }
   end
 
+  def find_by_author author
+    @posts.select { |post| post['author'] == author }
+  end
+
 end
