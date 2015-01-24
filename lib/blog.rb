@@ -9,4 +9,8 @@ class Blog
     @posts = JSON.parse(posts_file)['posts']
   end
 
+  def find_by_id id
+    @posts.select { |post| post['id'].to_i == id }
+  end
+
 end

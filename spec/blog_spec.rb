@@ -19,4 +19,12 @@ describe Blog do
     end
   end
 
+  describe "#find_by_id" do
+    it "Should return all the posts that match the specified id" do
+      @post = @blog.find_by_id(2)
+      expect @post.count.should == 1
+      expect @post[0]['title'].should == "Your second post"
+    end
+  end
+
 end
