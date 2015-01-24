@@ -22,7 +22,8 @@ class Blog
   end
 
   def summary id, len
-    print @posts[id]['description'].split(' ').first(len).join(' ')
+    @post = find_by_id(id).first
+    print @post['description'].split(' ').first(len).join(' ')
   end
 
 end

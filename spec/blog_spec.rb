@@ -23,7 +23,7 @@ describe Blog do
     it "Should return all the posts that match the specified id" do
       @post = @blog.find_by_id(2)
       expect @post.count.should == 1
-      expect @post[0]['title'].should == "Your second post"
+      expect @post.first['title'].should == "Your second post"
     end
   end
 
@@ -44,8 +44,8 @@ describe Blog do
   end
 
   describe "#summary" do
-    it "Displays the first len words of the post number id" do
-      expect { @blog.summary(0, 10) }.to output("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare").to_stdout
+    it "Displays the first n words of the post with the specified id" do
+      expect { @blog.summary(1, 10) }.to output("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare").to_stdout
     end
   end
 
