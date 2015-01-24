@@ -17,4 +17,8 @@ class Blog
     @posts.select { |post| post['author'] == author }
   end
 
+  def find_by_tag tag
+    @posts.select { |post| post['tags'].split(',').map(&:strip).include? tag }
+  end
+
 end

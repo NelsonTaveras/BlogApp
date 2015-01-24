@@ -34,4 +34,13 @@ describe Blog do
     end
   end
 
+  describe "#find_by_tag" do
+    it "Should return all the posts that contain the specified tag" do
+      @posts = @blog.find_by_tag("fitness")
+      expect @posts.count.should == 2
+      @posts = @blog.find_by_tag("cooking")
+      expect @posts.count.should == 1
+    end
+  end
+
 end
