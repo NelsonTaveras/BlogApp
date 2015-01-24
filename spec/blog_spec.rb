@@ -34,6 +34,15 @@ describe Blog do
     end
   end
 
+   describe "#tags_by_post" do
+    it "Should return all the tags in the post with the specified id" do
+      @tags = @blog.tags_by_post(1)
+      expect @tags.count.should == 2
+      @tags = @blog.tags_by_post(3)
+      expect @tags.count.should == 1
+    end
+  end
+
   describe "#find_by_tag" do
     it "Should return all the posts that contain the specified tag" do
       @posts = @blog.find_by_tag("fitness")
