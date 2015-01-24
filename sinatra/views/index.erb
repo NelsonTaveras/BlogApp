@@ -1,1 +1,8 @@
-Testing Sinatra.
+<% @posts.each do |post| %>
+  <p>
+    <b>Author:</b> <%= post['author'] %> <br />
+    <b>Title:</b> <%= post['title'] %> <br />
+    <b>Tags:</b> <%= post['tags'] %> <br />
+    <b>Description:</b> <%= post['description'] %> <br />
+  </p>
+<% end %>
