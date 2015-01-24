@@ -5,7 +5,8 @@ class Blog
   attr_accessor :posts
 
   def initialize
-    posts_file = File.read('posts.json')
+    posts_path = File.expand_path(File.join(File.dirname(__FILE__), "../resources/posts.json"))
+    posts_file = File.read(posts_path)
     @posts = JSON.parse(posts_file)['posts']
   end
 
