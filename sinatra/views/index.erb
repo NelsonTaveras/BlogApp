@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Post Results</title>
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/stylesheets/stylus.css">
 </head>
 <body>
   <% if @posts.count > 0 %>
@@ -14,8 +14,15 @@
           </p>
       </div>
           <div class="footer">
-            <b>Author:</b> <%= post['author'] %> <br />
-            <b>Tags:</b> <%= post['tags'] %> <br />
+            <div class="author">
+              Submitted by: <a href="/author/<%= post['author'] %>"><%= post['author'] %></a>
+            </div>
+            <div class="tags">
+              <% post['tags'].split(',').each do |tag| %>
+                <a href="/tags/<%= tag.strip %>">#<%= tag.strip %></a>
+              <% end %>
+            </div>
+            <div style="clear: both;"></div>
         </div>
     <% end %>
   <% else %>
