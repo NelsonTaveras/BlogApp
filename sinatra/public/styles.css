@@ -1,0 +1,39 @@
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background: #E9E9E9;
+}
+
+.post{
+	margin: auto;
+	margin-top: 20px;
+	padding: 0.5em 2%;
+	width: 720px;
+	background: #FFFFFF;
+
+}
+.post h1{
+	font-size: 45px;
+	color: #DB6161;
+	margin: 0;
+}
+
+.post p{
+	color: #8A8A8A;
+	font-size: 20;
+	margin: 10px 10px 0 0;
+}
+
+.footer{
+	margin: auto;
+	margin-bottom: 20px;
+	padding: 0.5em 2%;
+	width: 720px;
+	background: #DADADD;
+	border-top: 1px solid black;
+}
+
+/*
+	@include box-shadow;
+	min-height: 360px;
+	border-radius: 5px;
+*/
