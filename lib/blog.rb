@@ -21,4 +21,8 @@ class Blog
     @posts.select { |post| post['tags'].split(',').map(&:strip).include? tag }
   end
 
+  def summary id, len
+    print @posts[id]['description'].split(' ').first(len).join(' ')
+  end
+
 end

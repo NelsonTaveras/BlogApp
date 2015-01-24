@@ -43,4 +43,10 @@ describe Blog do
     end
   end
 
+  describe "#summary" do
+    it "Displays the first len words of the post number id" do
+      expect { @blog.summary(0, 10) }.to output("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ornare").to_stdout
+    end
+  end
+
 end
