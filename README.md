@@ -3,9 +3,10 @@ Yet another cool blog application.
 
 ## GEMS used
 1. sinatra
-2. rspec
-3. rack & rack-test
-4. sass	
+2. json
+3. rspec
+4. rack & rack-test
+5. sass	
 
 ## Usage
 Clone the repository, navigate to /BlogApp/sinatra and run the app.rb
