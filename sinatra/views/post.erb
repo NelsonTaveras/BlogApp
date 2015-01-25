@@ -1,0 +1,26 @@
+<% if @posts.count > 0 %>
+  <% @posts.each do |post| %>
+    <div class="post">
+        <h1> <%= post['title'] %> </h1>
+        <p>
+          <%= post['description'] %> 
+        </p>
+    </div>
+        <div class="footer">
+          <div class="author">
+            Submitted by: <a href="/author/<%= post['author'] %>"><%= post['author'] %></a>
+          </div>
+          <div class="tags">
+            <% post['tags'].split(',').each do |tag| %>
+              <a href="/tags/<%= tag.strip %>">#<%= tag.strip %></a>
+            <% end %>
+          </div>
+          <div style="clear: both;"></div>
+      </div>
+  <% end %>
+<% else %>
+  <div class="post">
+        <h1> Nothing to see here... </h1>
+  </div>
+<% end %>
+</body>
