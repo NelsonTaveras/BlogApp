@@ -19,8 +19,11 @@ class Blog
   end
 
   def tags_by_post id
-    post = find_by_id(id).first
-    post['tags'].split(',').map(&:strip)
+    post = find_by_id(id)
+    if post.empty?
+      return []
+    end
+    post.first['tags'].split(',').map(&:strip)
   end
 
   def find_by_tag tag
@@ -39,8 +42,8 @@ class Blog
   end
 
   def summary id, len
-    @post = find_by_id(id).first
-    print @post['description'].split(' ').first(len).join(' ')
+    post = find_by_id(id).first
+    print post['description'].split(' ').first(len).join(' ')
   end
 
 end

@@ -7,9 +7,10 @@ describe "Sinatra App" do
   include Rack::Test::Methods
 
   describe "/" do
-    it "Should load the home page" do
+    it "Should load the home page and show a list of tags" do
       get '/'
       last_response.should be_ok
+      expect last_response.body.include?('#tags by popularity').should == true
     end
   end
 
